@@ -1,0 +1,84 @@
+{
+  "page": {
+    "label": "TRANSLATE.PLUGIN_CONFIGURATION"
+  },
+	"sections": [
+   {
+      "id": "section_general",
+      "element": "section",
+      "label": "TRANSLATE.GENERAL_SETTINGS",
+      "icon": "fa-plug",
+      "onSave": {"type":"controller", "endpoint":"system_controller/presence_registrator", "method":"saveConfig"},
+      "saveButton": {
+        "label": "TRANSLATE.SAVE",
+        "data": [
+          "maxVol",
+		  "minVol",
+          "listenedPinDoor",
+		  "listenedPinRoom",
+		  "fadeConf",
+		  "volumio_host"
+        ]
+      },
+      "content": [
+        {
+          "id": "maxVol",
+          "type":"number",
+          "element": "input",
+          "doc": "This is the maximum volume that a user wishes to hear music at in this room",
+          "label": "Maximum Volume",
+          "value": "50"
+        },
+		{
+          "id": "minVol",
+          "type":"number",
+          "element": "input",
+          "doc": "This is the minimum volume that a user wishes to have in this room when nobody is present",
+          "label": "Minimum Volume",
+          "value": "20"
+        },
+        {
+          "id": "listenedPinDoor",
+          "type":"number",
+          "element": "input",
+          "doc": "This is the pin number the PIR-Sensor of the door is connected to",
+          "label": "PIR-Sensor Door, Pin Number (default: 17)",
+          "value": "17"
+        },
+        {
+          "id": "listenedPinRoom",
+          "type":"number",
+          "element": "input",
+          "doc": "This is the pin number the PIR-Sensor of the room is connected to",
+          "label": "PIR-Sensor Room, Pin Number (default: 27)",
+          "value": "27"
+        },
+		{
+          "id": "fadeConf",
+          "element": "switch",
+          "doc": "If activated, the volume will fade instead of instantly switching the volume",
+          "label": "Volume Fading",
+          "value": "false"
+        },
+		{
+			"id": "volumio_host",
+			"element": "select",
+			"doc": "This is the Host Volumio System, to which all the other Volumios should report their presence state to",
+			"label": "Presence Host",
+			"value": {
+				"value": "",
+				"label": ""
+			},
+			"options": []
+		},
+		{
+			"id": "refresh",
+            "element": "button",
+            "label": "Refresh Multiroom Data",
+            "doc": "Click here to refresh the list of Volumio Devices and Presence States" ,
+            "onClick": {"type":"controller", "endpoint":"system_controller/presence_registrator", "method":"refreshUIConfigUpHost"}
+		}
+      ]
+    }
+  ]
+}

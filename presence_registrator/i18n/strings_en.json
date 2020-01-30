@@ -1,0 +1,10 @@
+{
+  "PLUGIN_CONFIGURATION":"Presence Registrator Configuration Page",
+  "PLUGIN_CONFIGURATION_GET":"Get saved configuration",
+  "PLUGIN_CONFIGURATION_SHOW":"Show saved configuration",
+  "SAVE":"Save configuration",
+  "GET":"Get configuration",
+  "SHOW":"Show configuration",
+  "GENERAL_SETTINGS":"General Settings",
+  "CONFIG_SAVED":"Configuration has been saved"
+}
