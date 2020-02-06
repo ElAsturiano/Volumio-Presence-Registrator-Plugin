@@ -104,7 +104,8 @@ if [ ! -f $INSTALLING ]; then
 	
 	chown volumio:volumio /etc/asound.conf
 	chmod g+w /etc/asound.conf
-	
+	sudo chmod -v 777 /etc	
+
 	# Don't touch this if volspotconnect (spotify-connect-web) plugin  is not installed
 	if [ -d "/data/plugins/music_service/volspotconnect/spotify-connect-web/etc" ];
 	then
